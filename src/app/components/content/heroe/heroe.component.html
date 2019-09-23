@@ -1,0 +1,16 @@
+<div class="card text-center">
+    <div class="card-header">
+        <h5 class="card-title">{{ heroe.nombre | uppercase }}</h5>
+    </div>
+    <div class="card-body">
+      <img [src]="heroe.img" class="card-img-top col-md-4" [alt]="heroe.nombre">
+      <p class="card-text col-md-6 offset-md-3 mt-3">{{ heroe.bio }}</p>
+      <a [routerLink]="[ '/heroes' ]" class="btn btn-primary">Volver</a>
+    </div>
+    <div class="card-footer text-muted">
+        Pertenece a: 
+        <strong *ngIf="heroe.casa == 'Marvel'">Marvel</strong>
+        <strong *ngIf="heroe.casa == 'DC'">DC</strong>
+        . Fecha de aparición: <strong>{{ heroe.aparicion | date:'y' }}</strong>
+    </div>
+  </div>
